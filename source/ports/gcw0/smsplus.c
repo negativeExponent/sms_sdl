@@ -1009,6 +1009,8 @@ static void Cleanup(void)
 	system_shutdown();	
 }
 
+#define SDL_FLAGS SDL_HWSURFACE
+
 uint32_t update_window_size(uint32_t w, uint32_t h)
 {
 	if (sdl_screen) SDL_FreeSurface(sdl_screen);
@@ -1175,6 +1177,8 @@ int main (int argc, char *argv[])
 				break;
 			}
 		}
+		
+		
 		
 		if (joy_axis[0] > joy_commit_range) input.pad[0] |= INPUT_RIGHT;
 		else if (joy_axis[0] < -joy_commit_range) input.pad[0] |= INPUT_LEFT;
