@@ -1178,8 +1178,6 @@ int main (int argc, char *argv[])
 			}
 		}
 		
-		
-		
 		if (joy_axis[0] > joy_commit_range) input.pad[0] |= INPUT_RIGHT;
 		else if (joy_axis[0] < -joy_commit_range) input.pad[0] |= INPUT_LEFT;
 		else if (dpad_input[1] == 0 && dpad_input[2] == 0)
