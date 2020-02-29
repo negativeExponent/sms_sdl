@@ -643,7 +643,7 @@ static void Input_Remapping()
 	
 }
 
-void Menu()
+static void Menu()
 {
 	uint_fast8_t i;
 	char text[50];
