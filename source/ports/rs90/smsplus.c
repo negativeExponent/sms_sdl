@@ -929,6 +929,9 @@ int main (int argc, char *argv[])
 	if (strcmp(strrchr(argv[1], '.'), ".col") == 0) option.console = 6;
 	// Sometimes Game Gear games are not properly detected, force them accordingly
 	else if (strcmp(strrchr(argv[1], '.'), ".gg") == 0) option.console = 3;
+	
+	if (option.fullscreen < 0 && option.fullscreen > upscalers_available) option.fullscreen = 0;
+	if (option.console != 3 && option.fullscreen > 1) option.fullscreen = 1;
 
 	// Load ROM
 	if(!load_rom(argv[1])) {
