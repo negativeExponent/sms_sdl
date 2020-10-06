@@ -811,7 +811,11 @@ void Menu()
 	else
 	{
 		if(sdl_screen) SDL_FreeSurface(sdl_screen);
+#ifdef NOYUV
+		sdl_screen = SDL_SetVideoMode(VIDEO_WIDTH_SMS, 240, 8, SDL_HWSURFACE | SDL_HWPALETTE);
+#else
 		sdl_screen = SDL_SetVideoMode(VIDEO_WIDTH_SMS, 240, 24, SDL_HWSURFACE | SDL_YUV444);
+#endif
 	}
 }
 
