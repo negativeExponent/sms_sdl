@@ -808,6 +808,11 @@ void Menu()
     
     if (currentselection == 8)
         quit = 1;
+	else
+	{
+		if(sdl_screen) SDL_FreeSurface(sdl_screen);
+		sdl_screen = SDL_SetVideoMode(VIDEO_WIDTH_SMS, 240, 24, SDL_HWSURFACE | SDL_YUV444);
+	}
 }
 
 
